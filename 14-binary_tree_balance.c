@@ -6,7 +6,7 @@
  *
  * @tree: pointer to the root node of the tree to traverse
  *
- * Return: height or 0 if tree is NULL
+ * Return: balance or NULL if tree NULL
  */
 int binary_tree_balance(const binary_tree_t *tree)
 {
@@ -18,5 +18,5 @@ int binary_tree_balance(const binary_tree_t *tree)
 		right = 1 +  binary_tree_balance(tree->right);
 	if (tree->left != NULL)
 		left = 1 +  binary_tree_balance(tree->left);
-	return (right - left);
+	return (left - right);
 }
